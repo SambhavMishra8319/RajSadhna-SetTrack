@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Progress Tracker | RajSadhna SetTrack</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="../assets/logo.png">
-    <!-- Chart.js CDN -->
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
         <section class="tracker-container">
             <h1>Progress Tracker</h1>
             
-            <!-- Workout Form -->
+            
             <form id="workout-form">
                 <input type="date" id="date" required>
                 <input type="text" id="exercise" placeholder="Exercise Name" required>
@@ -28,7 +28,7 @@
                 <button type="submit">Add Workout</button>
             </form>
 
-            <!-- Workout Table -->
+           
             <table id="workout-table">
                 <thead>
                     <tr>
@@ -43,7 +43,7 @@
                 <tbody></tbody>
             </table>
 
-            <!-- Progress Chart -->
+         
             <h2>Progress Chart</h2>
             <canvas id="progressChart"></canvas>
         </section>
@@ -54,5 +54,149 @@
     </footer>
 
     <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Progress Tracker | RajSadhna SetTrack</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/png" href="../assets/logo.png"/>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">RajSadhna <span>SetTrack</span></div>
+  </header>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Muscle Groups</h3>
+      <ul id="muscle-list">
+        <li data-muscle="Chest" class="active">Chest</li>
+        <li data-muscle="Abs">Abs</li>
+        <li data-muscle="Triceps">Triceps</li>
+        <li data-muscle="Back">Back</li>
+        <li data-muscle="Biceps">Biceps</li>
+        <li data-muscle="Legs">Legs</li>
+        <li data-muscle="Shoulders">Shoulders</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <section class="tracker-container">
+        <div class="header-row">
+          <h1 id="page-title">Progress Tracker — Chest</h1>
+          <div class="controls">
+            <select id="exercise-select" class="select">
+              <option value="" disabled selected>Select common exercise</option>
+              <!-- Will be populated based on muscle -->
+            </select>
+            <button id="clear-all" class="danger">Clear All (Muscle)</button>
+          </div>
+        </div>
+
+        <!-- Workout Form -->
+        <!-- <form id="workout-form" class="card">
+          <input type="date" id="date" required />
+          <input type="text" id="exercise" placeholder="Exercise Name" required />
+          <input type="number" id="sets" placeholder="Sets" min="1" required />
+          <div id="sets-container"></div>
+          <input type="number" id="reps" placeholder="Reps" min="1" required />
+          <input type="number" id="weight" placeholder="Weight (kg)" min="0" />
+          <button type="submit" class="primary" id="submit-btn">Add Workout</button>
+        </form> -->
+        <form id="workout-form" class="card">
+  <!-- Top-level date input (selected once per workout session) -->
+  <input type="date" id="date" required />
+
+  <!-- Container for multiple exercises -->
+  <div id="exercises-container">
+    <!-- Each exercise block will be added dynamically here -->
+  </div>
+
+  <!-- Button to add a new exercise -->
+  <button type="button" id="add-exercise-btn">Add Exercise</button>
+
+  <!-- Submit button for the whole workout -->
+  <button type="submit" class="primary" id="submit-btn">Save Workout</button>
+</form>
+
+
+        <!-- Filters -->
+        <div class="filters card">
+          <label>
+            From:
+            <input type="date" id="from-date"/>
+          </label>
+          <label>
+            To:
+            <input type="date" id="to-date"/>
+          </label>
+          <input type="text" id="search-exercise" placeholder="Search exercise…"/>
+          <button id="apply-filters" class="secondary">Apply Filters</button>
+          <button id="reset-filters" class="secondary">Reset</button>
+        </div>
+
+        <!-- Workout Table -->
+        <div class="table-wrap card">
+          <table id="workout-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Weight (kg)</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <p id="empty-state" class="muted">No workouts yet—add your first entry! 💪</p>
+        </div>
+
+        <!-- Stats -->
+        <section class="stats-container card">
+          <h2>Stats (Visible Range)</h2>
+          <div class="stats-grid">
+            <div class="stat">
+              <div class="stat-label">Total Sets</div>
+              <div class="stat-value" id="total-sets">0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Total Reps</div>
+              <div class="stat-value" id="total-reps">0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Entries</div>
+              <div class="stat-value" id="total-entries">0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Heaviest (kg)</div>
+              <div class="stat-value" id="max-weight">0</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Chart -->
+        <section class="card">
+          <h2>Progress Chart</h2>
+          <canvas id="progressChart"></canvas>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 RajSadhna SetTrack | Designed with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
