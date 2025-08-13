@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RajSadhna SetTrack</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RajSadhna SetTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">RajSadhna <span>SetTrack</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a class="cta" href="#">Get Started</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <a class="navbar-brand" href="#">RajSadhna SetTrack</a>
-    <nav class="nav-links">
-      <a href="#">Features</a>
-      <a href="#">Plans</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#" class="cta">Start Free</a>
-    </nav>
-    <div class="menu-toggle">☰</div>
-  </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-text animate-fade-in">
+            <h1>Track. Improve. Conquer.</h1>
+            <p>Your personalized fitness companion to smash every goal.</p>
+            <a href="#features" class="hero-btn">Start Tracking</a>
+        </div>
+        <div class="hero-img animate-slide-in">
+            <img src="assets/background.jpg" alt="Workout">
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Track your workouts. Achieve your goals.</h1>
-      <p>Personalized workout plans to keep you motivated and fit.</p>
-      <a href="#" class="hero-btn">Get Started</a>
-    </div>
-    <div class="hero-img">
-      <img src="background.jpg" alt="Workout">
-    </div>
-  </section>
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="feature animate-up">
+            <h3>📊 Progress Tracking</h3>
+            <p>Monitor every workout and see your improvement over time.</p>
+        </div>
+        <div class="feature animate-up">
+            <h3>🥗 Nutrition Tips</h3>
+            <p>Personalized diet advice for your fitness goals.</p>
+        </div>
+        <div class="feature animate-up">
+            <h3>💪 Custom Workouts</h3>
+            <p>Plans built to fit your lifestyle and objectives.</p>
+        </div>
+    </section>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="feature">
-      <h3>📈 Progress Tracking</h3>
-      <p>Monitor your performance and reach your fitness milestones faster.</p>
-    </div>
-    <div class="feature">
-      <h3>💪 Custom Workouts</h3>
-      <p>Plans tailored to your goals, whether strength, endurance, or flexibility.</p>
-    </div>
-    <div class="feature">
-      <h3>📅 Schedule & Reminders</h3>
-      <p>Never miss a session with built-in reminders and scheduling.</p>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 RajSadhna SetTrack | Designed with ❤️</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 RajSadhna SetTrack. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
