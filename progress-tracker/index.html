@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker | RajSadhna SetTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">RajSadhna <span>SetTrack</span></div>
+    </header>
+
+    <main>
+        <section class="tracker-container">
+            <h1>Progress Tracker</h1>
+            
+            <!-- Workout Form -->
+            <form id="workout-form">
+                <input type="date" id="date" required>
+                <input type="text" id="exercise" placeholder="Exercise Name" required>
+                <input type="number" id="sets" placeholder="Sets" min="1" required>
+                <input type="number" id="reps" placeholder="Reps" min="1" required>
+                <input type="number" id="weight" placeholder="Weight (kg)" min="0">
+                <button type="submit">Add Workout</button>
+            </form>
+
+            <!-- Workout Table -->
+            <table id="workout-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Exercise</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Weight (kg)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <!-- Progress Chart -->
+            <h2>Progress Chart</h2>
+            <canvas id="progressChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 RajSadhna SetTrack | Designed with ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
